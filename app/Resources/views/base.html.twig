@@ -2,12 +2,31 @@
 <html>
     <head>
         <meta charset="UTF-8" />
-        <title>{% block title %}Welcome!{% endblock %}</title>
+        <title>{% block title %}Nimbus Digital News{% endblock %}</title>
         {% block stylesheets %}{% endblock %}
         <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
     </head>
     <body>
-        {% block body %}{% endblock %}
+        {% block body %}
+        <!--Footer -->    
+        	<footer>
+                      <!-- Links to pages --> 
+			<div class="footer-left">
+				<p class="footer-links">
+					<a href="#">Home</a>
+					·
+					<a href="#">News</a>
+					·
+					<a href="#">About</a>
+					·
+					<a href="#">Contact</a>
+				</p>
+				<p>Nimbus Digital &copy; 2018</p>
+			</div>
+		</footer>
+        {% endblock %}
+        
+        
         {% block javascripts %}{% endblock %}
     </body>
 </html>

@@ -1,0 +1,52 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+  <h1>About Us</h1>
+    <p>Nimbus Digital is a collection of innovative and powerful news brands 
+       that deliver compelling, diverse and visually engaging stories on your 
+       platform of choice. Nimbus Digital features world-class brands 
+       including NBCNews.com, MSNBC.com, TODAY.com, Nightly News, Meet the 
+       Press, Dateline, and the existing apps and digital extensions of these 
+       respective properties. We provide something for every news consumer with 
+       our comprehensive offerings that deliver the best in breaking news, 
+       segments from your favorite Nimbus Digital shows, live video coverage, 
+       original journalism, lifestyle features, commentary and local updates.</p>
+
+    <h2>CLOSED CAPTIONING</h2>
+       <p>Nimbus Digital is pleased to offer closed captioning on long-form 
+          content and certain other content that it makes available on 
+          television and online via websites and apps on mobile devices. 
+          To report an issue or concern regarding closed captioning on Nimbus
+          Digital programs viewed on television or online, please contact us at 
+          Nimbusdigital.com or 1-803-999-9000.</p>
+       
+    <table>
+        <tbody>
+        {% for news in news %}
+            <tr>
+                <td><a href="{{ path('admin_News_show', { 'id': news.id }) }}">{{ news.id }}</a></td>
+                <td>{{ news.title }}</td>
+                <td>{{ news.article }}</td>
+                <td>{{ news.category }}</td>
+                <td>{% if news.date %}{{ news.date|date('Y-m-d') }}{% endif %}</td>
+                <td>
+                    <ul>
+                        <li>
+                            <a href="{{ path('admin_News_show', { 'id': news.id }) }}">show</a>
+                        </li>
+                        <li>
+                            <a href="{{ path('admin_News_edit', { 'id': news.id }) }}">edit</a>
+                        </li>
+                    </ul>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('admin_News_new') }}">Create a new news</a>
+        </li>
+    </ul>
+{% endblock %}
