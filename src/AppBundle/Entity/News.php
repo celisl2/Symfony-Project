@@ -122,7 +122,7 @@ class News
         return $this;
     }
 
-    /**
+    /** 
      * Get category
      *
      * @return string
