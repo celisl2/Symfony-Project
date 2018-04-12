@@ -37,14 +37,14 @@ class News
 
     /**
      * @var string
-     *
+     * @ManyToOne(targetEntity="Category", mappedBy="news", cascade={"all"})
      * @ORM\Column(name="category", type="string", length=200)
      */
     private $category;
 
     /**
      * @var \DateTime
-     *
+     * @
      * @ORM\Column(name="date", type="date")
      */
     private $date;
@@ -127,7 +127,7 @@ class News
      *
      * @return string
      */
-    public function getCategory()
+    public function getCategory(Category $category)
     {
         return $this->category;
     }
