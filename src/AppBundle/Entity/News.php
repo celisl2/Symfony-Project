@@ -1,5 +1,5 @@
 <?php
-//Jalen
+
 namespace AppBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
@@ -37,14 +37,14 @@ class News
 
     /**
      * @var string
+     * @ORM\ManyToOne(targetEntity="Category", inversedBy="news", cascade={"all"})
      *
-     * @ORM\Column(name="category", type="string", length=200)
      */
     private $category;
 
     /**
      * @var \DateTime
-     *
+     * @
      * @ORM\Column(name="date", type="date")
      */
     private $date;
@@ -111,11 +111,11 @@ class News
     /**
      * Set category
      *
-     * @param string $category
+     * @param Category $category
      *
      * @return News
      */
-    public function setCategory($category)
+    public function setCategory(Category $category)
     {
         $this->category = $category;
 
@@ -155,5 +155,6 @@ class News
     {
         return $this->date;
     }
+
 }
 
