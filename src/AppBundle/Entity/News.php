@@ -37,8 +37,8 @@ class News
 
     /**
      * @var string
-     * @ManyToOne(targetEntity="Category", mappedBy="news", cascade={"all"})
-     * @ORM\Column(name="category", type="string", length=200)
+     * @ORM\ManyToOne(targetEntity="Category", inversedBy="news", cascade={"all"})
+     *
      */
     private $category;
 
@@ -111,11 +111,11 @@ class News
     /**
      * Set category
      *
-     * @param string $category
+     * @param Category $category
      *
      * @return News
      */
-    public function setCategory($category)
+    public function setCategory(Category $category)
     {
         $this->category = $category;
 
@@ -127,7 +127,7 @@ class News
      *
      * @return string
      */
-    public function getCategory(Category $category)
+    public function getCategory()
     {
         return $this->category;
     }
@@ -155,5 +155,6 @@ class News
     {
         return $this->date;
     }
+
 }
 

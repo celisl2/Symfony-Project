@@ -29,9 +29,10 @@ class Category
     private $title;
 
     /**
-     *  @OneToMany(targetEntity="News", mappedBy="category", cascade={"all"})
+     *  @ORM\OneToMany(targetEntity="News", mappedBy="category", cascade={"all"})
      */
     private $news;
+
     /**
      *
      *
@@ -67,7 +68,23 @@ class Category
     }
 
     /**
-     * @return mixed
+     * Set News
+     *
+     * @param News $news
+     *
+     * @return Category
+     */
+    public function setNews( News $news)
+    {
+        $this->news = $news;
+        return $this;
+    }
+
+
+    /**
+     * Get News
+     *
+     * @return News
      */
     public function getNews()
     {
@@ -75,11 +92,13 @@ class Category
     }
 
     /**
-     * @param mixed $news
+     * Convert to string
+     *
+     * @return string
      */
-    public function setNews($news): void
+    public function __toString()
     {
-        $this->news = $news;
+        return $this->title;
     }
 
 }
