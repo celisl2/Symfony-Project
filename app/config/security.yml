@@ -2,6 +2,7 @@
 # To get started with security, check out the documentation:
 # https://symfony.com/doc/current/security.html
 security:
+    # algorithm that encrypts user's password
     encoders:
         FOS\UserBundle\Model\UserInterface: bcrypt
     
@@ -18,10 +19,11 @@ security:
 
     firewalls:
         # disables authentication for assets and the profiler, adapt it according to your needs
+        # dev firewall makes sure that Symfony's development tools aren't blocked by your security
         dev:
             pattern: ^/(_(profiler|wdt)|css|images|js)/
             security: false
-
+        # 
         main:
             pattern: ^/
             form_login:
@@ -37,7 +39,10 @@ security:
 
             # https://symfony.com/doc/current/security/form_login_setup.html
             #form_login: ~
-    
+            
+    #requires the user to be logged in to access URL
+    # ^ means that only URLs beginning with the pattern are matched.
+    # IS_AUTHENTICATED_ANONYMOUSLY - alls users (even anonymous ones) have this
     access_control:
         - { path: ^/login$, role: IS_AUTHENTICATED_ANONYMOUSLY }
         - { path: ^/register, role: IS_AUTHENTICATED_ANONYMOUSLY }
