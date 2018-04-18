@@ -42,9 +42,10 @@ class DefaultController extends Controller
 
     public function newsIndexAction(Request $request)
     {
-        // $args = $this->getDoctrine()->getRepository()->findOneBy(News::getCategory());
+        // $args = $this->getDoctrine()->getRepository()->findOneBy(News::getCategory()); //News::getCategory() is incorrect
         // replace this example code with whatever you need
         return $this->render('default/news.html.twig', array('category' => $this->getDoctrine()->getRepository('AppBundle\Entity\News')->findAll() )); //add category object here
-    }
+        // you can connect whichever twig you want. so line above is correct but you would have to make a new.html.twig in default folder becauses there isn't one currently
+     * }
     */
 }
