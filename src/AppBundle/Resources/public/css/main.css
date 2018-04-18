@@ -14,7 +14,9 @@ header {
 	
 }
 h1{
-    font-family: 'Open Sans', sans-serif;
+    font: 400 "Roboto", Helvetica, Arial, sans-serif;
+    text-align: center;
+    color: #000;
 }
 ul {
 	list-style: none;
@@ -44,6 +46,9 @@ a.active {
         background-color: yellow;
         padding: 10px
 }
+a:visited { 
+    
+}
  
 #logo {
 	margin: 20px;
@@ -53,6 +58,12 @@ a.active {
 	background: url(/bundles/app/images/NDlogo.png) no-repeat center;
         background-size: 80px 80px;
 	display: block;
+}
+#logo1 {
+       margin: 10px;
+       float: right;
+       background-size: 80px 80px;
+       display: block;
 }
  
 nav {
