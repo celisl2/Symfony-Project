@@ -10,4 +10,15 @@ namespace AppBundle\Repository;
  */
 class NewsRepository extends \Doctrine\ORM\EntityRepository
 {
+    /**takes in nothing
+     * sorts the three most recent news articles
+     * @Return $queryBuilder
+     */
+    public function lastThree() {
+        $queryBuilder = $this->createQueryBuilder('news')
+        ->orderBy('news.date', 'DESC')
+        ->setMaxResults(3);
+
+       return $queryBuilder->getQuery()->execute();
+    }
 }
