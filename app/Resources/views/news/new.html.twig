@@ -1,16 +1,19 @@
 {% extends 'base.html.twig' %}
 
 {% block body %}
-    <h1>News Creation</h1>
-
+<div class="container">
+  <div id="contact">
+       <h1>News Creation</h1>
     {{ form_start(form) }}
         {{ form_widget(form) }}
         <input type="submit" value="Create" />
     {{ form_end(form) }}
-
+    </div>
     <ul>
         <li>
-            <a href="{{ path('admin_News_index') }}">Back to the list</a>
+            <a style="color:black;" href="{{ path('admin_News_index') }}">Back to the list</a>
         </li>
     </ul>
+        
+</div>
 {% endblock %}

@@ -1,17 +1,19 @@
 {% extends 'base.html.twig' %}
 
 {% block body %}
-    <ul>
+    <div class="container">
+        <div class="homea">
+        <h1>Nimbus Digital</h1>
+        </div>
+    <div class="home">
         {%  for new in news %}
-            <li>{{ new }}</li>
-            <ul>
-                <li> {{ new.article | slice(0, 100) }}...</li>
-                <li> {{ new.date | date('m-d-y') }}</li>
-                <li> {{ new.category }}</li>
-            </ul>
+            <h2>{{ new }}</h2>
+                <p> {{ new.article | slice(0, 100) }}...</p>
+                <p> {{ new.date | date('m-d-y') }}</p>
+                <p> {{ new.category }}</p>
         {% endfor %}
-    </ul>
-
+      </div>
+    </div>
 {% endblock %}
 
 {% block stylesheets %}

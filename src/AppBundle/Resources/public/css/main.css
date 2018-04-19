@@ -78,7 +78,29 @@ a:visited {
    float: right; 
    padding: 10px
 }
- 
+.appbundle_news_category{
+   
+}
+
+.home{
+  background: #F9F9F9;
+  padding: 40px;
+  margin: auto;
+  box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);  
+  text-align:left;  
+  max-width: 800px;
+  width: 100%;
+  margin: 0 auto; 
+  font-family: "Roboto", Helvetica, Arial, sans-serif;
+  font-weight: 100;
+  font-size: 12px;
+  line-height: 30px;
+  color: #777;
+  background: #fff;
+}
+.homea{
+    padding: 40px;
+}
 nav {
 	text-align: center;
 	padding: 20px;
