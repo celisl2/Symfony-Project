@@ -3,9 +3,9 @@
 {% block body %}
 
     <ul>
-    {%  for one in news %}
-        <li>{{ one }}</li>
-
+    {%  for new in category.news %}
+        <h2>{{ new.title }}</h2>
+        <li>{{ new.article | slice(0, 100) }}</li>
 
     {% endfor %}
     </ul>

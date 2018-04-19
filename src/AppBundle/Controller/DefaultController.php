@@ -58,6 +58,6 @@ class DefaultController extends Controller
     public function categorySortIndexAction(Request $request, Category $category)
     {
         //$cagegory is the category in the db
-        return $this->render('default/category.html.twig', array('category' => $this->getDoctrine()->getRepository('AppBundle\Entity\Category')));
+        return $this->render('default/category.html.twig', array('category' => $category));
     }
 }
