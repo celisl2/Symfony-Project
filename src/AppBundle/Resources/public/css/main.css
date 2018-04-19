@@ -74,6 +74,10 @@ a:visited {
        background-size: 80px 80px;
        display: block;
 }
+.logout{
+   float: right; 
+   padding: 10px
+}
  
 nav {
 	text-align: center;
