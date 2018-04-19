@@ -2,12 +2,87 @@
 <html>
     <head>
         <meta charset="UTF-8" />
-        <title>{% block title %}Welcome!{% endblock %}</title>
+        <title>{% block title %}Nimbus Digital News{% endblock %}</title>
+        
+        <link href="{{ asset('/bundles/app/css/main.css')}}" rel="stylesheet">
+        <link href="{{ asset('/bundles/app/css/form.css')}}" rel="stylesheet">
         {% block stylesheets %}{% endblock %}
         <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
     </head>
     <body>
-        {% block body %}{% endblock %}
-        {% block javascripts %}{% endblock %}
+        {% block nav %}
+  <header>
+         <div class="logout">
+            {% if is_granted("IS_AUTHENTICATED_REMEMBERED") %}
+                {{ 'layout.logged_in_as'|trans({'%username%': app.user.username}, 'FOSUserBundle') }} |
+                <a href="{{ path('fos_user_security_logout') }}">
+                    {{ 'layout.logout'|trans({}, 'FOSUserBundle') }}
+                </a>
+            {% else %}
+                <a id="logo1" href="{{ path('fos_user_security_login') }}">{{ 'layout.login'|trans({}, 'FOSUserBundle') }}</a>
+            {% endif %}
+        </div>
+	<a href="#" id="logo"></a>
+	<nav>
+		<a href="#" id="menu-icon"></a>
+		<ul>
+			<li style="list-style: none; display: inline"></li>
+			<li>
+				<a href="#">Home</a> 
+			</li>
+			<li style="list-style: none; display: inline"></li>
+			<li>
+				<a href="#">About</a>
+			</li>
+			<li style="list-style: none; display: inline"></li>
+			<li>
+				<a href="#">News</a>
+			</li>
+			<li style="list-style: none; display: inline"></li>
+			<li>
+				<a href="#">Contact</a>
+			</li>
+			<li style="list-style: none; display: inline"></li>
+                       
+		</ul>
+	</nav>
+  </header>
+        {% endblock %}
+        
+        {% block body %}
+            
+        {% endblock %}
+        
+        {% block footer %}
+             <footer class="footer-distributed">
+			<div class="footer-right">
+				<a href="https://www.facebook.com">
+                                    <img border="0" alt="W3Schools" src="/bundles/app/images/Facebook.png" width="35" height="35"></a>
+				<a href="https://twitter.com/?lang=en">
+                                    <img border="0" alt="W3Schools" src="/bundles/app/images/Twitter.png" width="35" height="35"></a>
+				<a href="https://www.instagram.com">
+                                    <img border="0" alt="W3Schools" src="/bundles/app/images/Instagram.png" width="35" height="35"></a>
+			</div>
+
+			<div class="footer-left">
+ 
+				<p class="footer-links">
+					<a href="#">Home</a>
+					·
+					<a href="#">About</a>
+					·
+					<a href="#">News</a>
+					·
+					<a href="#">Contact</a>
+				</p>
+				<p>Nimbus Digital &copy; 2018</p>
+			</div>
+
+		</footer>
+        {% endblock %}
+        
+        
+        {% block javascripts %}
+        {% endblock %}
     </body>
 </html>
