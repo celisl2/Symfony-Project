@@ -156,5 +156,15 @@ class News
         return $this->date;
     }
 
+    /**
+     * Convert to string
+     *
+     * @return string
+     */
+    public function __toString()
+    {
+        return $this->title;
+    }
+
 }
 

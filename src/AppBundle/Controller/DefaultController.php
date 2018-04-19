@@ -31,20 +31,23 @@ class DefaultController extends Controller
      */
     public function categoryIndexAction(Request $request)
     {
-       // $args = $this->getDoctrine()->getRepository()->findOneBy(News::getCategory());
-        // replace this example code with whatever you need
-        return $this->render('default/category.html.twig', array('category' => $this->getDoctrine()->getRepository('AppBundle\Entity\Category')->findAll() )); //add category object here
+        return $this->render('default/category.html.twig', array('category' => $this->getDoctrine()->getRepository('AppBundle\Entity\Category')->findAll()));
     }
 
-    /*
     /**
      * @Route("/news/")
-
+     */
     public function newsIndexAction(Request $request)
     {
-        // $args = $this->getDoctrine()->getRepository()->findOneBy(News::getCategory());
-        // replace this example code with whatever you need
-        return $this->render('default/news.html.twig', array('category' => $this->getDoctrine()->getRepository('AppBundle\Entity\News')->findAll() )); //add category object here
+        return $this->render('default/new.html.twig', array('news' => $this->getDoctrine()->getRepository('AppBundle\Entity\News')->findAll() ));
     }
-    */
+
+    /**
+     * @Route("/about/")
+     */
+    public function aboutIndexAction(Request $request)
+    {
+        return $this->render('default/about.html.twig');
+    }
+
 }
