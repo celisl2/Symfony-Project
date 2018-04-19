@@ -1,14 +1,21 @@
 {% extends 'base.html.twig' %}
 
 {% block body %}
-    <div class="container">
-        <div class="homea">
-        <h1>Nimbus Digital</h1>
-        </div>
+    <div class="">
+        <!-- Banner -->
+	<section id="banner">
+	   <div class="inner">
+	      <h1>NIMBUS DIGITAL<span><br />
+		 “Coverage You Can Count On”</span></h1>
+	   </div>
+	</section>
+  <div class="homea">
+      <h1>Lastest News</h1>
+  </div>
     <div class="home">
         {%  for new in news %}
             <h2>{{ new }}</h2>
-                <p> {{ new.article | slice(0, 100) }}...</p>
+                <p> {{ new.article | slice(0, 200) }}...</p>
                 <p> {{ new.date | date('m-d-y') }}</p>
                 <p> {{ new.category }}</p>
         {% endfor %}
@@ -17,7 +24,5 @@
 {% endblock %}
 
 {% block stylesheets %}
-<style>
-
-</style>
+	
 {% endblock %}
