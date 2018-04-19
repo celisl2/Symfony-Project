@@ -2,8 +2,13 @@
 
 {% block body %}
 
+    <ul>
+    {%  for new in category.news %}
+        <h2>{{ new.title }}</h2>
+        <li>{{ new.article | slice(0, 100) }}</li>
 
-
+    {% endfor %}
+    </ul>
 
 
 

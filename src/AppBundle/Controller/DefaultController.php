@@ -13,16 +13,18 @@ use Symfony\Component\HttpFoundation\Request;
 class DefaultController extends Controller
 {
 
-
     /**
      * @Route("/", name="homepage")
      */
     public function indexAction(Request $request)
     {
+       // $queryBuilder = $this->getDoctrine()->getRepository('AppBundle\Entity\News;')->
         // replace this example code with whatever you need
-        return $this->render('default/index.html.twig', [
-            'base_dir' => realpath($this->getParameter('kernel.project_dir')).DIRECTORY_SEPARATOR,
-        ]);
+        $args = array();
+        $lastThree = $this->getDoctrine()->getRepository('AppBundle\Entity\News')->lastThree();
+        $args['news'] = $lastThree;
+        return $this->render('default/index.html.twig', $args);
+        //to ascending order
     }
 
 
@@ -50,4 +52,12 @@ class DefaultController extends Controller
         return $this->render('default/about.html.twig');
     }
 
+    /**
+     * @Route("/category/{category}")
+     */
+    public function categorySortIndexAction(Request $request, Category $category)
+    {
+        //$cagegory is the category in the db
+        return $this->render('default/category.html.twig', array('category' => $category));
+    }
 }
