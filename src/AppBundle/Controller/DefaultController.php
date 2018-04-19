@@ -31,7 +31,7 @@ class DefaultController extends Controller
      */
     public function categoryIndexAction(Request $request)
     {
-        return $this->render('default/category.html.twig', array('category' => $this->getDoctrine()->getRepository('AppBundle\Entity\Category')->findAll() ));
+        return $this->render('default/category.html.twig', array('category' => $this->getDoctrine()->getRepository('AppBundle\Entity\Category')->findAll()));
     }
 
     /**
@@ -39,7 +39,15 @@ class DefaultController extends Controller
      */
     public function newsIndexAction(Request $request)
     {
-        return $this->render('news/new.html.twig', array('category' => $this->getDoctrine()->getRepository('AppBundle\Entity\News')->findAll() ));
+        return $this->render('default/new.html.twig', array('news' => $this->getDoctrine()->getRepository('AppBundle\Entity\News')->findAll() ));
+    }
+
+    /**
+     * @Route("/about/")
+     */
+    public function aboutIndexAction(Request $request)
+    {
+        return $this->render('default/about.html.twig');
     }
 
 }

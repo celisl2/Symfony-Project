@@ -1,0 +1,16 @@
+{% extends 'base.html.twig' %}
+
+    {% block body %}
+        <!-- add nav here -->
+        <ul>
+            {%  for new in news %}
+                <li>{{ new }}</li>
+                <ul>
+                    <li> {{ new.article }}</li>
+                    <li> {{ new.date | date('m-d-y') }}</li>
+                    <li> {{ new.category }}</li>
+                </ul>
+            {% endfor %}
+        </ul>
+        <!-- add footer here -->
+    {% endblock %}
