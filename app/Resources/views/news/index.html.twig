@@ -16,21 +16,21 @@
         </thead>
         <tbody>
         {% for news in news %}
-            <tr>
-                <td><a href="{{ path('admin_News_show', { 'id': news.id }) }}">{{ news.id }}</a></td>
+            <tr class="contact">
+                <td><a style="color:black;" href="{{ path('admin_News_show', { 'id': news.id }) }}">{{ news.id }}</a></td>
                 <td>{{ news.title }}</td>
                 <td>{{ news.article }}</td>
                 <td>{{ news.category }}</td>
                 <td>{% if news.date %}{{ news.date|date('Y-m-d') }}{% endif %}</td>
                 <td>
-                    <ul>
-                        <li>
-                            <a href="{{ path('admin_News_show', { 'id': news.id }) }}">show</a>
-                        </li>
-                        <li>
-                            <a href="{{ path('admin_News_edit', { 'id': news.id }) }}">edit</a>
-                        </li>
-                    </ul>
+                    
+                    <p>
+                            <a style="color:black;" href="{{ path('admin_News_show', { 'id': news.id }) }}">show</a>
+                        </p>
+                        <p>
+                            <a style="color:black;" href="{{ path('admin_News_edit', { 'id': news.id }) }}">edit</a>
+                        </p>
+                    
                 </td>
             </tr>
         {% endfor %}

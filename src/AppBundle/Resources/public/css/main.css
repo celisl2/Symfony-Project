@@ -340,6 +340,27 @@ nav {
         color: #fff
 }
 
+table {
+   font-family: 'Open Sans', sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+     color: #000000;
+}
+
+td, th {
+    border: 1px solid #dddddd;
+    text-align: left;
+    padding: 8px;
+}
+
+tr:nth-child(even) {
+    background-color: #dddddd;
+}
+
+tr:nth-child(odd) {
+    background-color: #7F7979;
+}
+
  
 /* Footer */
 .footer-distributed{
