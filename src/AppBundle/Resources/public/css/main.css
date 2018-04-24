@@ -17,7 +17,7 @@ body {
 		text-align: left;
 		position: relative;
 		z-index: 9999;
-                 height: 500px;
+                height: 500px;
                 width: 100%;
       
 	}
@@ -350,7 +350,7 @@ nav {
 	text-align: left;
 	font-family: 'Oswald', sans-serif;
 	padding: 45px 50px;
-	margin-top: 600px;
+	margin-top: 350px;
 }
 
 .footer-distributed .footer-left p{

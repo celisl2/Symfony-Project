@@ -2,15 +2,32 @@
 
     {% block body %}
         <!-- add nav here -->
-        <ul>
-            {%  for new in news %}
-                <li>{{ new }}</li>
-                <ul>
-                    <li> {{ new.article }}</li>
-                    <li> {{ new.date | date('m-d-y') }}</li>
-                    <li> {{ new.category }}</li>
-                </ul>
+        <h1 class="homea">NEWS</h1>
+        <div id="contacta"
+             <h1>{%  for new in news %}</h1>
+                <h2>{{ new }}</h2>
+                    <p>{{ new.article }}</p>
+                    <p> {{ new.date | date('m-d-y') }}</p>
+                    <p> {{ new.category }} </p>
+                    <hr>
             {% endfor %}
-        </ul>
+      </div>
         <!-- add footer here -->
     {% endblock %}
+        
+    {% block body %}
+<div class="container">
+  <div id="contact">
+       <h1>News Creation</h1>
+    {{ form_start(form) }}
+        {{ form_widget(form) }}
+        <input type="submit" value="Create" />
+    {{ form_end(form) }}
+    <ul>
+        <li>
+            <a style="color:black;" href="{{ path('admin_News_index') }}">Back to the list</a>
+        </li>
+    </ul>
+      </div>   
+</div>
+{% endblock %}
