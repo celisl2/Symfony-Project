@@ -1,21 +1,29 @@
 {% extends 'base.html.twig' %}
 
 {% block body %}
-    <ul>
+    <div class="">
+        <!-- Banner -->
+	<section id="banner">
+	   <div class="inner">
+	      <h1>NIMBUS DIGITAL<span><br />
+		 “Coverage You Can Count On”</span></h1>
+	   </div>
+	</section>
+  <div class="homea">
+      <h1>LASTEST NEWS</h1>
+  </div>
+    <div class="home">
         {%  for new in news %}
-            <li>{{ new }}</li>
-            <ul>
-                <li> {{ new.article | slice(0, 100) }}...</li>
-                <li> {{ new.date | date('m-d-y') }}</li>
-                <li> {{ new.category }}</li>
-            </ul>
+            <h2>{{ new }}</h2>
+                <p> {{ new.article | slice(0, 200) }}...</p>
+                <p> {{ new.date | date('m-d-y') }}</p>
+                <p> {{ new.category }}</p>
+                <hr>
         {% endfor %}
-    </ul>
-
+      </div>
+    </div>
 {% endblock %}
 
 {% block stylesheets %}
-<style>
-
-</style>
+	
 {% endblock %}

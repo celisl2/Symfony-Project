@@ -69,11 +69,30 @@ body {
   font: 400 12px/16px "Roboto", Helvetica, Arial, sans-serif;
 }
 
+#contactb input[type="text"],
+#contactb input[type="email"],
+#contactb input[type="tel"],
+#contactb input[type="url"],
+#contactb input[type="password"],
+#contactb textarea,
+#contactb button[type="submit"] {
+  font: 400 12px/16px "Roboto", Helvetica, Arial, sans-serif;
+}
+
 #contact {
   background: #F9F9F9;
   padding: 25px;
   margin: 150px 0;
   box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
+  height:470px;
+}
+
+#contactb {
+  background: #F9F9F9;
+  padding: 25px;
+  margin: 150px 0;
+  box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
+  height:350px;
 }
 
 #contact h3 {
@@ -104,6 +123,19 @@ fieldset {
 #contact input[type="url"],
 #contact input[type="password"],
 #contact textarea {
+  width: 100%;
+  border: 1px solid #ccc;
+  background: #FFF;
+  margin: 0 0 5px;
+  padding: 10px;
+}
+
+#contactb input[type="text"],
+#contactb input[type="email"],
+#contactb input[type="tel"],
+#contactb input[type="url"],
+#contactb input[type="password"],
+#contactb textarea {
   width: 100%;
   border: 1px solid #ccc;
   background: #FFF;

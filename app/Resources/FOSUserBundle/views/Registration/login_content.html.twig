@@ -1,0 +1,31 @@
+{% extends 'base.html.twig' %}
+{% block body %}
+{% if error %}
+    <div>{{ error.messageKey|trans(error.messageData, 'security') }}</div>
+{% endif %}
+
+
+<div class="container">  
+<form id="contact" action="{{ path("fos_user_security_check") }}" method="post">
+     <h1>Login</h1>
+    {% if csrf_token %}
+        <input type="hidden" name="_csrf_token" value="{{ csrf_token }}" />
+    {% endif %}
+
+    <fieldset for="username">{{ 'security.login.username'|trans }}</fieldset>
+    <input type="text" id="username" name="_username" value="{{ last_username }}" required="required" autocomplete="username" />
+
+    <fieldset for="password">{{ 'security.login.password'|trans }}</fieldset>
+    <input type="password" id="password" name="_password" required="required" autocomplete="current-password" />
+
+    <fieldset type="checkbox" id="remember_me" name="_remember_me" value="on" />
+    <label for="remember_me">{{ 'security.login.remember_me'|trans }}</label>
+    <fieldset>
+    <input type="submit" id="contact-submit" name="submit" value="{{ 'security.login.submit'|trans }}" />
+    </fieldset>
+    </fieldset>
+    <p class="copyright">Nimbus Digital &copy;<a href="/" target="_blank" title="Colorlib"></a></p>
+</form>
+</div>
+  
+{% endblock %}

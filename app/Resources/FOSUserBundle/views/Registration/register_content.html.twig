@@ -1,0 +1,15 @@
+  
+{{ form_start(form, {'method': 'post', 'action': path('fos_user_registration_register'), 'attr': {'class': 'fos_user_registration_register'}}) }}
+ 
+    <div id="contact">
+         <h1>Registration Form</h1>{{ form_widget(form) }}
+       <div>
+          <input type="submit" value="{{ 'Submit'|trans }}" />
+       </fieldset>
+         <p class="copyright">Nimbus Digital &copy;<a href="/" target="_blank" title="Colorlib"></a></p>
+         <p>
+              <img class="center" border="0" alt="W3Schools" src="/bundles/app/images/NDlogo.png" width="500" height="500">
+         </p>
+        </div>
+    
+          {{ form_end(form) }}  </div>

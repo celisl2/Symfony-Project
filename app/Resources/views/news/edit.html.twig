@@ -2,7 +2,8 @@
 
 {% block body %}
     <h1>News edit</h1>
-
+<div class="container">
+  <div id="contact">
     {{ form_start(edit_form) }}
         {{ form_widget(edit_form) }}
         <input type="submit" value="Edit" />
@@ -10,7 +11,7 @@
 
     <ul>
         <li>
-            <a href="{{ path('admin_News_index') }}">Back to the list</a>
+            <a style="color:black;" href="{{ path('admin_News_index') }}">Back to the list</a>
         </li>
         <li>
             {{ form_start(delete_form) }}
@@ -18,4 +19,6 @@
             {{ form_end(delete_form) }}
         </li>
     </ul>
+   </div>   
+</div>          
 {% endblock %}
