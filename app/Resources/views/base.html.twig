@@ -11,7 +11,7 @@
     </head>
     <body>
         {% block nav %}
-  <header>
+   <header>
          <div class="logout">
             {% if is_granted("IS_AUTHENTICATED_REMEMBERED") %}
                 {{ 'layout.logged_in_as'|trans({'%username%': app.user.username}, 'FOSUserBundle') }} |
@@ -36,13 +36,17 @@
 			</li>
 			<li style="list-style: none; display: inline"></li>
 			<li>
-				<a href="/about">About</a>
+				<a href="/category">Categories</a>
 			</li>
                         <li style="list-style: none; display: inline"></li>
 			<li>
 				<a href="/register">Register</a>
 			</li>
 			<li style="list-style: none; display: inline"></li>
+                        <li>
+				<a href="/about">About</a>
+			</li>
+                        <li style="list-style: none; display: inline"></li>
 		</ul>
 	</nav>
   </header>
@@ -72,9 +76,9 @@
 					·
 					<a href="/news">News</a>
 					·
-					<a href="#">About</a>
+					<a href="/about">About</a>
 					·
-					<a href="#">Register</a>
+					<a href="/register">Register</a>
 				</p>
 				<p>Nimbus Digital &copy; 2018</p>
 			</div>
