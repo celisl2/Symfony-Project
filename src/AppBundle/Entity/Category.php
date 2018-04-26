@@ -2,6 +2,7 @@
 
 namespace AppBundle\Entity;
 
+use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
@@ -12,6 +13,7 @@ use Doctrine\ORM\Mapping as ORM;
  */
 class Category
 {
+
     /**
      * @var int
      *
@@ -32,6 +34,15 @@ class Category
      *  @ORM\OneToMany(targetEntity="News", mappedBy="category", cascade={"all"})
      */
     private $news;
+
+    /**
+     * Category constructor.
+     * @param $news
+     */
+    public function __construct($news)
+    {
+        $this->news = new ArrayCollection();
+    }
 
     /**
      *
@@ -76,7 +87,7 @@ class Category
      */
     public function setNews( News $news)
     {
-        $this->news = $news;
+        $this->news[] = $news;
         return $this;
     }
 
@@ -84,7 +95,7 @@ class Category
     /**
      * Get News
      *
-     * @return News
+     * @return News[]
      */
     public function getNews()
     {

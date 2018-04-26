@@ -1,0 +1,15 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+
+    <ul>
+        {%  for category in categories %}
+            <h2>{{ category.title }}</h2>
+            {# replace code above  and make them links i think the following works for it
+            <a style="color:black;" href="{{ path('/category/' ~ category ) }}">{{ category.title }}</a>
+            links shoud be /category/1 and so forth so i think thatll work
+            #}
+        {% endfor %}
+    </ul>
+
+{% endblock %}

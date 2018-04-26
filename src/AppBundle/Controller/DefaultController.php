@@ -33,7 +33,7 @@ class DefaultController extends Controller
      */
     public function categoryIndexAction(Request $request)
     {
-        return $this->render('default/category.html.twig', array('category' => $this->getDoctrine()->getRepository('AppBundle\Entity\Category')->findAll()));
+        return $this->render('default/categories.html.twig', array('categories' => $this->getDoctrine()->getRepository('AppBundle\Entity\Category')->findAll()));
     }
 
     /**
